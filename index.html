@@ -6,7 +6,7 @@
     <title>Beta's Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="light">
     <header>
         <h1>Beta's Portfolio</h1>
         <nav>
@@ -17,37 +17,48 @@
             <button id="theme-toggle">Toggle Dark Mode</button>
         </nav>
     </header>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm Beta, a Python developer from Egypt...</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>Video Title</h3>
-            <p>Video Description</p>
-            <div class="rating">
-                <button class="rate-up">👍</button>
-                <span class="rate-count">0</span>
-                <button class="rate-down">👎</button>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm Beta, a Python developer from Egypt...</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="video-card">
+                <video src="video1.mp4" controls></video>
+                <h3>Video Title</h3>
+                <p>Video Description</p>
+                <div class="rating">
+                    <button class="rate-up">👍</button>
+                    <span class="rate-count">0</span>
+                    <button class="rate-down">👎</button>
+                </div>
+                <div class="comments">
+                    <h4>Comments</h4>
+                    <div class="comment-list"></div>
+                    <textarea placeholder="Add a comment..."></textarea>
+                    <button class="add-comment">Submit</button>
+                </div>
             </div>
-            <div class="comments">
-                <h4>Comments</h4>
-                <div class="comment-list"></div>
-                <textarea placeholder="Add a comment..."></textarea>
-                <button class="add-comment">Submit</button>
-            </div>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: beta@example.com</p>
-    </section>
-    <section id="blog">
-        <h2>Blog</h2>
-        <p>Coming soon...</p>
-    </section>
+            <!-- Repeat the video-card div for more videos -->
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Coming soon...</p>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Beta</p>
     </footer>
