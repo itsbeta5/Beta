@@ -50,6 +50,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 20px;
+    position: relative;
 }
 
 nav a {
@@ -58,12 +59,16 @@ nav a {
     padding: 5px 10px;
 }
 
-nav button {
+#theme-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
     color: var(--header-text);
     cursor: pointer;
-    padding: 5px 10px;
+    font-size: 20px;
 }
 
 main {
@@ -96,6 +101,12 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.video-card video {
+    width: 100%;
+    height: auto;
+    max-width: 640px;
 }
 
 .rating {
