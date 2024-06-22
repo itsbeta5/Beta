@@ -23,10 +23,16 @@ document.getElementById('upload-form').addEventListener('submit', (event) => {
     const title = document.getElementById('video-title').value;
     const description = document.getElementById('video-description').value;
     const file = document.getElementById('video-file').files[0];
+
     if (file) {
-        const videoURL = URL.createObjectURL(file);
-        addVideoCard(title, description, videoURL);
-        alert('Video uploaded successfully');
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const videoURL = event.target.result;
+            addVideoCard(title, description, videoURL);
+            saveVideoToStorage(title, description, videoURL);
+            alert('Video uploaded successfully');
+        };
+        reader.readAsDataURL(file);
     }
 });
 
@@ -82,6 +88,18 @@ function attachCommentEventListeners(videoCard) {
     });
 }
 
+function saveVideoToStorage(title, description, videoURL) {
+    // Implement local storage or backend API call to save video data
+    const videos = JSON.parse(localStorage.getItem('videos')) || [];
+    videos.push({ title, description, videoURL });
+    localStorage.setItem('videos', JSON.stringify(videos));
+}
+
+function loadVideosFromStorage() {
+    const videos = JSON.parse(localStorage.getItem('videos')) || [];
+    videos.forEach(video => addVideoCard(video.title, video.description, video.videoURL));
+}
+
 // Initially hide the admin panel elements
 document.getElementById('upload-form').style.display = 'none';
 document.getElementById('admin').style.display = 'none';
@@ -91,3 +109,5 @@ document.querySelector('a[href="#admin"]').addEventListener('click', () => {
     document.getElementById('admin').style.display = 'block';
     document.getElementById('login-form').style.display = 'block';
 });
+
+loadVideosFromStorage();
