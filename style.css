@@ -3,6 +3,12 @@
     --text-color: black;
     --header-bg: #333;
     --header-text: white;
+    --card-bg: #f9f9f9;
+    --card-border: #ddd;
+    --button-bg: #007bff;
+    --button-text: white;
+    --input-bg: #f4f4f4;
+    --input-border: #ccc;
 }
 
 [data-theme="dark"] {
@@ -10,6 +16,12 @@
     --text-color: white;
     --header-bg: #1e1e1e;
     --header-text: #f1f1f1;
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+    --button-bg: #0062cc;
+    --button-text: white;
+    --input-bg: #333;
+    --input-border: #555;
 }
 
 body {
@@ -37,6 +49,7 @@ nav {
 nav a {
     color: var(--header-text);
     text-decoration: none;
+    padding: 5px 10px;
 }
 
 nav button {
@@ -44,16 +57,23 @@ nav button {
     border: none;
     color: var(--header-text);
     cursor: pointer;
+    padding: 5px 10px;
 }
 
-section {
+main {
     padding: 20px;
 }
 
+section {
+    margin-bottom: 40px;
+}
+
 .video-card {
-    border: 1px solid #ccc;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     padding: 10px;
     margin: 10px 0;
+    border-radius: 5px;
 }
 
 .rating {
@@ -69,6 +89,11 @@ section {
 .comments textarea {
     width: 100%;
     height: 50px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 3px;
+    padding: 5px;
+    color: var(--text-color);
 }
 
 footer {
@@ -79,4 +104,27 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+button, input[type="submit"] {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover, input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--input-border);
+    border-radius: 3px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
 }
