@@ -15,6 +15,7 @@
             <a href="#contact">Contact Me</a>
             <a href="#blog">Blog</a>
             <button id="theme-toggle">Toggle Dark Mode</button>
+            <a href="#admin">Admin</a>
         </nav>
     </header>
     <main>
@@ -24,23 +25,9 @@
         </section>
         <section id="projects">
             <h2>Projects</h2>
-            <div class="video-card">
-                <video src="video1.mp4" controls></video>
-                <h3>Video Title</h3>
-                <p>Video Description</p>
-                <div class="rating">
-                    <button class="rate-up">👍</button>
-                    <span class="rate-count">0</span>
-                    <button class="rate-down">👎</button>
-                </div>
-                <div class="comments">
-                    <h4>Comments</h4>
-                    <div class="comment-list"></div>
-                    <textarea placeholder="Add a comment..."></textarea>
-                    <button class="add-comment">Submit</button>
-                </div>
+            <div id="video-container">
+                <!-- Video cards will be dynamically inserted here -->
             </div>
-            <!-- Repeat the video-card div for more videos -->
         </section>
         <section id="contact">
             <h2>Contact Me</h2>
@@ -57,6 +44,25 @@
         <section id="blog">
             <h2>Blog</h2>
             <p>Coming soon...</p>
+        </section>
+        <section id="admin" style="display: none;">
+            <h2>Admin Panel</h2>
+            <form id="upload-form">
+                <label for="video-title">Video Title:</label>
+                <input type="text" id="video-title" name="video-title" required>
+                <label for="video-description">Video Description:</label>
+                <textarea id="video-description" name="video-description" required></textarea>
+                <label for="video-file">Upload Video:</label>
+                <input type="file" id="video-file" name="video-file" accept="video/*" required>
+                <button type="submit">Upload Video</button>
+            </form>
+            <div id="login-form" style="display: none;">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="button" id="login-button">Login</button>
+            </div>
         </section>
     </main>
     <footer>
