@@ -1,25 +1,28 @@
 :root {
-    --bg-color: white;
-    --text-color: black;
-    --header-bg: #333;
-    --header-text: white;
+    --primary-color: #00ffff; /* aqua */
+    --secondary-color: #ffea00; /* yellow */
+    --accent-color: #007bff; /* blue */
+    --text-color: #000;
+    --bg-color: #fff;
+    --header-bg: #007bff;
+    --header-text: #fff;
     --card-bg: #f9f9f9;
     --card-border: #ddd;
     --button-bg: #007bff;
-    --button-text: white;
+    --button-text: #fff;
     --input-bg: #f4f4f4;
     --input-border: #ccc;
+    --green-color: #28a745;
 }
 
 [data-theme="dark"] {
+    --text-color: #fff;
     --bg-color: #121212;
-    --text-color: white;
     --header-bg: #1e1e1e;
     --header-text: #f1f1f1;
     --card-bg: #1e1e1e;
     --card-border: #333;
     --button-bg: #0062cc;
-    --button-text: white;
     --input-bg: #333;
     --input-border: #555;
 }
@@ -31,12 +34,15 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
     background-color: var(--header-bg);
     color: var(--header-text);
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -61,11 +67,24 @@ nav button {
 }
 
 main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
+    width: 100%;
     margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .video-card {
@@ -74,16 +93,21 @@ section {
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .rating {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-top: 10px;
 }
 
 .comments {
     margin-top: 10px;
+    width: 100%;
 }
 
 .comments textarea {
@@ -101,9 +125,6 @@ footer {
     color: var(--header-text);
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
 button, input[type="submit"] {
